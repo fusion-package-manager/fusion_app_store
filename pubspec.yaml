@@ -1,0 +1,36 @@
+name: fusion_app_store
+description: The Fusion App Store
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/icons/
+
+  fonts:
+    - family: Sen
+      fonts:
+        - asset: fonts/Sen/Sen-Regular.ttf
+          weight: 400
+        - asset: fonts/Sen/Sen-Medium.ttf
+          weight: 500
+        - asset: fonts/Sen/Sen-Bold.ttf
+          weight: 700
