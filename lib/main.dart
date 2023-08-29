@@ -1,17 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fusion_app_store/firebase_options.dart';
 
-void main() {
-  runApp(const FusionAppStore());
-}
-
-class FusionAppStore extends StatelessWidget {
-  const FusionAppStore({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      // debugShowCheckedModeBanner: false,
-      home: Scaffold(),
-    );
-  }
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
