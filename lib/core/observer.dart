@@ -38,7 +38,7 @@ class UseCaseObserver<ReturnType> extends Observer<ReturnType> {
         _onError = onError ?? ((e) => throw e),
         _onNext = onNext ??
             ((_) => debugPrint(
-                "</ [UseCase(RESPONSE)] Neglected Response from $name: $_ >"));
+                "??? [UseCase(RESPONSE)] Neglected Response from $name: $_ >"));
 
   @override
   void onComplete() {
@@ -54,8 +54,10 @@ class UseCaseObserver<ReturnType> extends Observer<ReturnType> {
   @override
   void onNext(response) {
     if (assertNotNullResponse) {
-      assert(response != null,
-          onError(Exception("----> UseCase[ASSERTION_FAILED]")));
+      assert(
+          response != null,
+          onError(Exception(
+              "*** UseCase[ASSERTION_FAILED] Null Value encountered for a non-nullable value emitter.")));
       return;
     }
     _onNext.call(response);
