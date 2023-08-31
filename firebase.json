@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "source": "./fusion-app-store",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",

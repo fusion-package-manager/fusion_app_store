@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fusion_app_store/config/assets/app_backgrounds.dart';
 import 'package:fusion_app_store/config/assets/app_icons.dart';
+import 'package:fusion_app_store/config/theme/app_theme.dart';
 
 class LoginInitializedStateView extends StatelessWidget {
   const LoginInitializedStateView({super.key});
@@ -45,6 +46,36 @@ class LoginInitializedStateView extends StatelessWidget {
                         height: 124,
                       ),
                     ],
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: "Meet",
+                      style: AppTheme.fontSize(48),
+                      children: [
+                        TextSpan(
+                          text: " Fusion",
+                          style: AppTheme.fontExtraBold.copyWith(fontSize: 48),
+                        ),
+                      ],
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: "\"The Only",
+                      style: AppTheme.fontSize(16),
+                      children: [
+                        TextSpan(
+                          text: " App Store",
+                          style: AppTheme.fontBold.copyWith(fontSize: 16),
+                        ),
+                        TextSpan(
+                          text: " of its kind\"",
+                          style: AppTheme.fontBold
+                              .copyWith(fontSize: 16)
+                              .copyWith(fontStyle: FontStyle.italic),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

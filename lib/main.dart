@@ -16,7 +16,7 @@ void main() async {
 
   await DependencyInjector.injectDependencies();
 
-  navigationService = Get.find();
+  navigationService = Get.find<NavigationService>();
 
   runApp(const App());
 }
