@@ -1,13 +1,25 @@
+import 'package:fusion_app_store/app/auth/presentation/login/login_view.dart';
+import 'package:fusion_app_store/app/auth/presentation/splash/splash_view.dart';
 import 'package:get/get.dart';
 
 /// A service class that handles navigation within the app using the GetX library.
 class NavigationService {
   // Route names for the pages.
-  static const authPage = "/auth";
+  static const splashPage = "/splash";
+  static const loginPage = "/login";
   static const storePage = "/store";
 
   /// A list of [GetPage] objects representing the pages in the app.
-  static const List<GetPage<dynamic>> pages = [];
+  final List<GetPage<dynamic>> pages = [
+    GetPage(
+      name: splashPage,
+      page: () => const SplashView(),
+    ),
+    GetPage(
+      name: loginPage,
+      page: () => const LoginView(),
+    ),
+  ];
 
   /// Navigates to a specified page.
   ///
@@ -24,6 +36,6 @@ class NavigationService {
     if (shouldReplace) {
       return Get.offNamed(page, arguments: arguments);
     }
-    return Get.to(page, arguments: arguments);
+    return Get.toNamed(page, arguments: arguments);
   }
 }

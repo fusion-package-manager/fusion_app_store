@@ -14,10 +14,10 @@ class UseCaseObserver<ReturnType> extends Observer<ReturnType> {
   late final VoidCallback _onComplete;
 
   /// Called when an error is encountered.
-  late final Function(dynamic) _onError;
+  late final Function _onError;
 
   /// Called only if the [UseCase] has a non void return type.
-  late final Function(dynamic) _onNext;
+  late final Function _onNext;
 
   /// Assertion to make sure that a null safe value is emitted by the [UseCase].
   ///
@@ -30,11 +30,11 @@ class UseCaseObserver<ReturnType> extends Observer<ReturnType> {
   /// [onNext] function's result is neglected.
   UseCaseObserver({
     required this.name,
-    required VoidCallback onComplete,
-    Function(dynamic)? onError,
-    Function(dynamic)? onNext,
+    VoidCallback? onComplete,
+    Function? onError,
+    Function? onNext,
     this.assertNotNullResponse = false,
-  })  : _onComplete = onComplete,
+  })  : _onComplete = onComplete ?? (() {}),
         _onError = onError ?? ((e) => throw e),
         _onNext = onNext ??
             ((_) => debugPrint(
