@@ -59,5 +59,6 @@ class DefaultFirebaseOptions {
     projectId: 'fusion-app-store',
     authDomain: 'fusion-app-store.firebaseapp.com',
     storageBucket: 'fusion-app-store.appspot.com',
+    measurementId: "G-75PPTRCH14",
   );
 }
