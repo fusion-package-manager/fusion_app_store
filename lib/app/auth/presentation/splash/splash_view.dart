@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' show State, StatefulWidget, Widget;
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_controller.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/states/splash_initialized_state_view.dart';
+import 'package:fusion_app_store/constants/states/unsupported_device_screen.dart';
 
 class SplashView extends View {
   const SplashView({super.key});
@@ -23,11 +24,11 @@ class SplashViewState
       });
 
   @override
-  Widget get mobileView => throw UnimplementedError();
+  Widget get mobileView => const UnsupportedDeviceScreen();
 
   @override
-  Widget get tabletView => throw UnimplementedError();
+  Widget get tabletView => const UnsupportedDeviceScreen();
 
   @override
-  Widget get watchView => throw UnimplementedError();
+  Widget get watchView => const UnsupportedDeviceScreen();
 }

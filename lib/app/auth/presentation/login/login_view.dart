@@ -3,6 +3,7 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/login_controller.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/login_state_machine.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/states/login_initialized_state_view.dart';
+import 'package:fusion_app_store/constants/states/unsupported_device_screen.dart';
 import 'package:fusion_app_store/constants/unrecognized_state_exception.dart';
 
 class LoginView extends View {
@@ -30,11 +31,11 @@ class LoginViewState extends ResponsiveViewState<LoginView, LoginController> {
       );
 
   @override
-  Widget get mobileView => throw UnimplementedError();
+  Widget get mobileView => const UnsupportedDeviceScreen();
 
   @override
-  Widget get tabletView => throw UnimplementedError();
+  Widget get tabletView => const UnsupportedDeviceScreen();
 
   @override
-  Widget get watchView => throw UnimplementedError();
+  Widget get watchView => const UnsupportedDeviceScreen();
 }

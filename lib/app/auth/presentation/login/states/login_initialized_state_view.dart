@@ -54,7 +54,8 @@ class LoginInitializedStateView extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: " Fusion",
-                          style: AppTheme.fontExtraBold.copyWith(fontSize: 48),
+                          style:
+                              AppTheme.fontExtraBold.copyWith(fontSize: 48),
                         ),
                       ],
                     ),

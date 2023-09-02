@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_view.dart';
+import 'package:fusion_app_store/config/theme/app_theme.dart';
 import 'package:fusion_app_store/core/injection_container.dart';
 import 'package:fusion_app_store/core/navigation_service.dart';
 import 'package:fusion_app_store/firebase_options.dart';
@@ -10,6 +11,9 @@ import 'package:responsive_framework/responsive_framework.dart';
 late NavigationService navigationService;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding.instance.addObserver(AppBindingsObserver());
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
