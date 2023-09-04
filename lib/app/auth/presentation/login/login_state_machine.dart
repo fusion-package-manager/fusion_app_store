@@ -1,11 +1,13 @@
 import 'package:fusion_app_store/core/state_machine.dart';
 
 class LoginStateMachine extends StateMachine<LoginState, LoginEvent> {
-  LoginStateMachine() : super(LoginInitializedState());
+  LoginStateMachine() : super(LoginOverviewState());
 
   @override
   LoginState getStateOnEvent(LoginEvent event) {
     switch (event) {
+      case LoginEvent.overview:
+        return LoginInitializedState();
       case LoginEvent.initialized:
         return LoginInitializedState();
       case LoginEvent.success:
@@ -18,6 +20,7 @@ class LoginStateMachine extends StateMachine<LoginState, LoginEvent> {
 
 // Events
 enum LoginEvent {
+  overview,
   initialized,
   success,
   failed,
@@ -25,6 +28,8 @@ enum LoginEvent {
 
 // States
 class LoginState {}
+
+class LoginOverviewState extends LoginState {}
 
 class LoginInitializedState extends LoginState {}
 

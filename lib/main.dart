@@ -12,7 +12,7 @@ late NavigationService navigationService;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  WidgetsBinding.instance.addObserver(AppBindingsObserver());
+  WidgetsBinding.instance.addObserver(PageResizeObserver());
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

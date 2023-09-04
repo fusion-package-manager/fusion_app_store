@@ -1,6 +1,8 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/login_presenter.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/login_state_machine.dart';
+import 'package:fusion_app_store/core/navigation_service.dart';
+import 'package:fusion_app_store/core/observer.dart';
 import 'package:get/get.dart';
 
 class LoginController extends Controller {
@@ -22,5 +24,29 @@ class LoginController extends Controller {
 
   LoginState getCurrentState() {
     return _stateMachine.currentState;
+  }
+
+  void showLoginUI() {
+    _stateMachine.onEvent(LoginEvent.initialized);
+    refreshUI();
+  }
+
+  void tryLogin() {
+    _presenter.login(
+      observer: UseCaseObserver(
+        name: "UserLoginUserCaseObserver",
+        onComplete: () {},
+        onError: (error) {
+          _stateMachine.onEvent(LoginEvent.failed);
+          refreshUI();
+        },
+        onNext: (bool loggedIn) {
+          if (loggedIn) {
+            Get.find<NavigationService>()
+                .navigateTo(page: NavigationService.splashPage);
+          }
+        },
+      ),
+    );
   }
 }

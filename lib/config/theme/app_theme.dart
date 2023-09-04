@@ -50,7 +50,7 @@ class ResponsiveScale {
     var context = Get.context;
     if (context == null) {
       debugPrint(
-          "Cannot Determine the device size, Using desktopScaleFactor instead.");
+          "[WARNING] Cannot Determine the device size, Using desktopScaleFactor instead.");
       return desktopScaleFactor;
     }
     var size = MediaQuery.sizeOf(context).width;
@@ -72,10 +72,36 @@ class ResponsiveScale {
   }
 }
 
-class AppBindingsObserver with WidgetsBindingObserver {
+class PageResizeObserver with WidgetsBindingObserver {
   @override
   void didChangeMetrics() {
     Get.reload();
     super.didChangeMetrics();
+  }
+}
+
+extension ConfigurableTextStyle on TextStyle {
+  TextStyle withColor(Color color) {
+    return copyWith(
+      color: color,
+    );
+  }
+
+  TextStyle makeBold() {
+    return copyWith(
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  TextStyle makeExtraBold() {
+    return copyWith(
+      fontWeight: FontWeight.w900,
+    );
+  }
+
+  TextStyle fontSize(double size) {
+    return copyWith(
+      fontSize: size,
+    );
   }
 }

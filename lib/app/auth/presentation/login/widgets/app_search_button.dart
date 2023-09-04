@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fusion_app_store/config/assets/app_icons.dart';
 
-class AppSearchField extends StatefulWidget {
-  const AppSearchField({
+class AppSearchButton extends StatefulWidget {
+  const AppSearchButton({
     super.key,
     required this.onPressed,
   });
@@ -10,10 +10,10 @@ class AppSearchField extends StatefulWidget {
   final VoidCallback onPressed;
 
   @override
-  State<AppSearchField> createState() => _AppSearchFieldState();
+  State<AppSearchButton> createState() => _AppSearchButtonState();
 }
 
-class _AppSearchFieldState extends State<AppSearchField> {
+class _AppSearchButtonState extends State<AppSearchButton> {
   bool hover = false;
 
   @override
