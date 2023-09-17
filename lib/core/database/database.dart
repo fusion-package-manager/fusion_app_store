@@ -1,5 +1,7 @@
 import 'package:drift/drift.dart';
+import 'package:drift/wasm.dart';
 import 'package:drift/web.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fusion_app_store/app/store/domain/entity/user_entity.dart';
 import 'package:fusion_app_store/main_common.dart';
 
@@ -78,10 +80,12 @@ class FusionDatabase extends _$FusionDatabase {
       ),
       mode: InsertMode.replace,
     );
+    debugPrint(
+        "[FusionDatabase](UserTable) Adding User ${userEntity.username}");
   }
 
   static FusionDatabase getInstance() {
-    return constructDb();
+    return FusionDatabase(connectOnWeb());
   }
 }
 
@@ -97,4 +101,22 @@ FusionDatabase constructDb() {
     ),
   );
   return db;
+}
+
+DatabaseConnection connectOnWeb() {
+  return DatabaseConnection.delayed(Future(() async {
+    final result = await WasmDatabase.open(
+      databaseName:
+          'fusion_app_store_db', // prefer to only use valid identifiers here
+      sqlite3Uri: Uri.parse('sqlite3.wasm'),
+      driftWorkerUri: Uri.parse('drift_worker.dart.js'),
+    );
+
+    if (result.missingFeatures.isNotEmpty) {
+      debugPrint('Using ${result.chosenImplementation} due to missing browser '
+          'features: ${result.missingFeatures}');
+    }
+
+    return result.resolvedExecutor;
+  }));
 }

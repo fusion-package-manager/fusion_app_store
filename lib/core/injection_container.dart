@@ -8,6 +8,7 @@ import 'package:fusion_app_store/app/auth/presentation/login/login_presenter.dar
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_presenter.dart';
 import 'package:fusion_app_store/app/store/data/store_repository_impl.dart';
 import 'package:fusion_app_store/app/store/domain/repository/store_repository.dart';
+import 'package:fusion_app_store/app/store/domain/usecases/sync_store_usecase.dart';
 import 'package:fusion_app_store/app/store/presentation/store/store_presenter.dart';
 import 'package:fusion_app_store/core/database/database.dart';
 import 'package:fusion_app_store/core/navigation_service.dart';
@@ -27,10 +28,11 @@ final class DependencyInjector {
     Get.put(UserLoginStateUseCase(Get.find()));
     Get.put(UserLoginUseCase(Get.find()));
     Get.put(UserLogOutUseCase(Get.find()));
+    Get.put(SyncStoreUseCase(Get.find()));
 
     // Presenters
     Get.put(SplashPresenter(Get.find()));
     Get.put(LoginPresenter(Get.find(), Get.find(), Get.find()));
-    Get.put(StorePresenter());
+    Get.put(StorePresenter(Get.find()));
   }
 }

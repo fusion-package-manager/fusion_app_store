@@ -1,6 +1,7 @@
 // Import the necessary library for the AppEntity class.
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fusion_app_store/app/store/domain/entity/app_entity.dart';
 import 'package:fusion_app_store/constants/db_keys.dart';
 
@@ -37,7 +38,7 @@ class UserEntity {
         ownedApps = decodeOwnedApps(data[DBKeys.ownedAppsKey]),
         reputation = data[DBKeys.reputationKey],
         strikes = data[DBKeys.strikesKey],
-        joinedAt = data[DBKeys.joinedAtKey];
+        joinedAt = (data[DBKeys.joinedAtKey] as Timestamp).toDate();
 
   @override
   bool operator ==(Object other) {
@@ -55,16 +56,24 @@ class UserEntity {
     return jsonEncode(likedApps.toList());
   }
 
-  static Set<String> decodeLikedApps(source) {
-    return (jsonDecode(source) as List<String>).toSet();
+  static Set<String> decodeLikedApps(List<dynamic> targets) {
+    List<String> output = [];
+    for (var target in targets) {
+      output.add(target);
+    }
+    return output.toSet();
   }
 
   String encodeOwnedApps() {
     return jsonEncode(ownedApps.toList());
   }
 
-  static Set<AppEntity> decodeOwnedApps(source) {
-    return (jsonDecode(source) as List<AppEntity>).toSet();
+  static Set<AppEntity> decodeOwnedApps(List<dynamic> targets) {
+    List<AppEntity> output = [];
+    for (var target in targets) {
+      output.add(target);
+    }
+    return output.toSet();
   }
 
   Map<String, dynamic> toMap() {

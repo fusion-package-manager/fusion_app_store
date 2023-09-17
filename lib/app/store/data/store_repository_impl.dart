@@ -38,4 +38,10 @@ class StoreRepositoryImpl extends StoreRepository {
       await Future.wait(futures);
     });
   }
+
+  @override
+  Future<void> fetchApps() async {}
+
+  @override
+  void listenApps() {}
 }

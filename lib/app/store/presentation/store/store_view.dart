@@ -16,6 +16,8 @@ class StoreView extends View {
 class StoreStateView extends ResponsiveViewState<StoreView, StoreController> {
   StoreStateView() : super(StoreController());
 
+  bool startedSync = false;
+
   @override
   Widget get desktopView => ControlledWidgetBuilder<StoreController>(
         builder: (context, controller) {
@@ -23,8 +25,14 @@ class StoreStateView extends ResponsiveViewState<StoreView, StoreController> {
           final currentStateType = currentState.runtimeType;
           switch (currentStateType) {
             case StoreInitializationState:
-              controller.initStore();
-              return const StoreInitializationStateView();
+              var state = currentState as StoreInitializationState;
+              if (state.syncCompletionData.isEmpty && !startedSync) {
+                // this means we have just started the engine
+                // thus, we initialize the store data.
+                startedSync = true;
+                controller.initStore();
+              }
+              return StoreInitializationStateView(state: state);
             default:
               throw UnrecognizedStateException();
           }
