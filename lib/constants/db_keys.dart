@@ -23,4 +23,7 @@ class DBKeys {
   static const reputationKey = 'reputation';
   static const strikesKey = 'strikes';
   static const joinedAtKey = 'joinedAt';
+
+  // Firebase collection keys
+  static const usersKey = 'users';
 }
