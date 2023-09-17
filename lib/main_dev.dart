@@ -8,7 +8,7 @@ import 'package:fusion_app_store/main_common.dart';
 import 'package:get/get.dart';
 
 void main() async {
-  flavor = Flavor.production;
+  flavor = Flavor.dev;
   sessionStartTime = DateTime.now();
 
   WidgetsFlutterBinding.ensureInitialized();

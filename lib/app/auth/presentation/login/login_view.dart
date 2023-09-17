@@ -4,8 +4,8 @@ import 'package:fusion_app_store/app/auth/presentation/login/login_controller.da
 import 'package:fusion_app_store/app/auth/presentation/login/login_state_machine.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/states/login_initialized_state_view.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/states/login_overview_state_view.dart';
-import 'package:fusion_app_store/constants/states/unsupported_device_screen.dart';
 import 'package:fusion_app_store/constants/unrecognized_state_exception.dart';
+import 'package:fusion_app_store/utils/screens/unsupported_device_screen.dart';
 
 class LoginView extends View {
   const LoginView({super.key});
@@ -20,14 +20,18 @@ class LoginViewState extends ResponsiveViewState<LoginView, LoginController> {
   @override
   Widget get desktopView => ControlledWidgetBuilder<LoginController>(
         builder: (context, controller) {
-          final currentStateType = controller.getCurrentState().runtimeType;
+          final loginState = controller.getCurrentState();
+          final currentStateType = loginState.runtimeType;
           switch (currentStateType) {
             case LoginOverviewState:
+              controller.redirectToStoreIfLoggedIn();
               return LoginOverviewStateView(controller: controller);
-            case LoginInitializedState:
-              return LoginInitializedStateView(controller: controller);
             case LoginFailedState:
-              return LoginInitializedStateView(controller: controller);
+            case LoginInitializedState:
+              return LoginInitializedStateView(
+                controller: controller,
+                state: loginState,
+              );
           }
           throw UnrecognizedStateException();
         },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/login_controller.dart';
+import 'package:fusion_app_store/app/auth/presentation/login/login_state_machine.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/widgets/app_continue_without_login_button.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/widgets/app_learn_more_button.dart';
 import 'package:fusion_app_store/app/auth/presentation/login/widgets/app_login_button.dart';
@@ -12,9 +13,11 @@ class LoginInitializedStateView extends StatelessWidget {
   const LoginInitializedStateView({
     super.key,
     required this.controller,
+    required this.state,
   });
 
   final LoginController controller;
+  final LoginState state;
 
   @override
   Widget build(BuildContext context) {
@@ -113,9 +116,11 @@ class LoginInitializedStateView extends StatelessWidget {
                                     },
                                   ),
                                   const SizedBox(height: 21),
-                                  AppLoginButton(onPressed: () {
-                                    controller.tryLogin();
-                                  }),
+                                  AppLoginButton(
+                                    onPressed: () {
+                                      controller.tryLogin();
+                                    },
+                                  ),
                                 ],
                               ),
                             ),

@@ -1,0 +1,186 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "K_FvcSSSNFin-qfd6EcGz",
+      "type": "text",
+      "x": 290.1475524902344,
+      "y": 172.59547424316406,
+      "width": 42.09608459472656,
+      "height": 20,
+      "angle": 0,
+      "strokeColor": "#495057",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 736329783,
+      "version": 31,
+      "versionNonce": 1513972375,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "iGX_nmUBrr6E8R7b8uYHZ",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1694933296168,
+      "link": null,
+      "locked": false,
+      "text": "users",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 13,
+      "containerId": null,
+      "originalText": "users",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "iGX_nmUBrr6E8R7b8uYHZ",
+      "type": "arrow",
+      "x": 307.5086669921875,
+      "y": 203.42881774902344,
+      "width": 1.2586669921875,
+      "height": 31.29339599609375,
+      "angle": 0,
+      "strokeColor": "#495057",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 2055236887,
+      "version": 24,
+      "versionNonce": 1428098425,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1694933296168,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -1.2586669921875,
+          31.29339599609375
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "K_FvcSSSNFin-qfd6EcGz",
+        "focus": 0.13281797356757186,
+        "gap": 10.833343505859375
+      },
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "4w9N7EP_0Fxr5D6jUk5Ag",
+      "type": "arrow",
+      "x": 306.1197814941406,
+      "y": 234.67881774902344,
+      "width": 54.991302490234375,
+      "height": 31.08218972900511,
+      "angle": 0,
+      "strokeColor": "#495057",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 2091972185,
+      "version": 106,
+      "versionNonce": 816675321,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1694933569318,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          54.991302490234375,
+          31.08218972900511
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": {
+        "elementId": "xSkBix5iw7PMkRXyOFCcr",
+        "focus": -0.14162771689773546,
+        "gap": 9.157989501953125
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "xSkBix5iw7PMkRXyOFCcr",
+      "type": "text",
+      "x": 370.2690734863281,
+      "y": 222.265625,
+      "width": 81.72817993164062,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#495057",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 962326871,
+      "version": 105,
+      "versionNonce": 904770807,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "4w9N7EP_0Fxr5D6jUk5Ag",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1694933569317,
+      "link": null,
+      "locked": false,
+      "text": "name\nreviews\nlikedApps\napps\nactive\ndescription",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 113,
+      "containerId": null,
+      "originalText": "name\nreviews\nlikedApps\napps\nactive\ndescription",
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

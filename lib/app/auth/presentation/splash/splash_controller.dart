@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_presenter.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_state_machine.dart';
 import 'package:fusion_app_store/core/navigation_service.dart';
 import 'package:fusion_app_store/core/observer.dart';
-import 'package:fusion_app_store/main.dart';
+import 'package:fusion_app_store/main_common.dart';
 import 'package:get/get.dart';
 
 class SplashController extends Controller {
@@ -31,7 +30,8 @@ class SplashController extends Controller {
         onNext: (bool isLoggedIn) {
           switch (isLoggedIn) {
             case true:
-              debugPrint("User is LOGGED IN");
+              navigationService.navigateTo(page: NavigationService.storePage);
+              break;
             case false:
               navigationService.navigateTo(page: NavigationService.loginPage);
           }

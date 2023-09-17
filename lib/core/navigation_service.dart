@@ -1,5 +1,6 @@
 import 'package:fusion_app_store/app/auth/presentation/login/login_view.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_view.dart';
+import 'package:fusion_app_store/app/store/presentation/store/store_view.dart';
 import 'package:get/get.dart';
 
 /// A service class that handles navigation within the app using the GetX library.
@@ -18,6 +19,10 @@ class NavigationService {
     GetPage(
       name: loginPage,
       page: () => const LoginView(),
+    ),
+    GetPage(
+      name: storePage,
+      page: () => const StoreView(),
     ),
   ];
 

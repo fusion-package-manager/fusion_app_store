@@ -2,7 +2,7 @@ import 'package:flutter/material.dart' show State, StatefulWidget, Widget;
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/splash_controller.dart';
 import 'package:fusion_app_store/app/auth/presentation/splash/states/splash_initialized_state_view.dart';
-import 'package:fusion_app_store/constants/states/unsupported_device_screen.dart';
+import 'package:fusion_app_store/utils/screens/unsupported_device_screen.dart';
 
 class SplashView extends View {
   const SplashView({super.key});
